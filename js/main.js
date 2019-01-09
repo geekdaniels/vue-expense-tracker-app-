@@ -1,38 +1,39 @@
 new Vue({
-    el : "#expense_app",
-    data : {
+    el: "#expense_app",
+    data: {
         expense: '',  // Add this line
-        category : '',
-        categories : [
-            {name : 'Feeding'},
-            {name : 'Transportation'},
-            {name : 'Mobilization'},
-            {name : 'Miscellaneous'}
-            ],
+        category: 'Feeding',
+        time: 'Morning',
+        price: '',
+        categories: [
+            { name: 'Feeding' },
+            { name: 'Transportation' },
+            { name: 'Mobilization' },
+            { name: 'Miscellaneous' }
+        ],
 
-            times : [
-                {when : 'Morning'},
-                {when : 'Afternoon'},
-                {when : 'Evening'},
-                {when : 'Night-Time'}
-                ],
+        times: [
+            { when: 'Morning' },
+            { when: 'Afternoon' },
+            { when: 'Evening' },
+            { when: 'Night-Time' }
+        ],
 
-        expenses : [
-            {key : 'Feeding', category: 'Cat_name'},
-            ],
-     
-        cat_capture : 'he',
-        name: 'she',
-        time : ''
-            
+        expenses: [
+            { key: 'Feeding', category: 'Cat_name', time : '', price : '' },
+        ],
         
+       
+
+
     },
     methods: {
-        addExpense(){
-            this.expenses.push({key: this.expense, category: this.category,});
+        addExpense() {
+            this.expenses.push({ key: this.expense, category: this.category, time : this.time, price : this.price });
             this.expense = '';
-                   
-            console.log(this.category); // Add this
+            this.price = '';
+
+            console.log(this.category + " " + this.time + " " + this.price); // Add this
         }
     },
-    })
+})

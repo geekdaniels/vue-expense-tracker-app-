@@ -40,7 +40,6 @@ ul {
   select{
     width: calc(30%);
     border: 0;
-    margin-top: 10px;
     padding: 10px;
     font-size: 1em;
     background-color: #323333;
@@ -50,7 +49,6 @@ ul {
   .price{
     width: calc(38%);
     border: 0;
-    margin-top: 10px;
     padding: 10px;
     font-size: 1em;
     background-color: #323333;

@@ -10,27 +10,31 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
+
 <body>
     <div class="container" id="expense_app">
         <div class="row justify-content-center">
             <div class="col-md-6 mt-5" style="height : 10vh">
                 <div class="holder">
-                    <form @submit.prevent="addExpense">
-                        <input v-model=expense placeholder="Expense Description" class="p-2" type="text" name="description" />
-                         <select v-model=category>
-                            <option  :name="category.name" v-for="category in categories" :value="category.name">{{category.name}}</option>
+                    <form @submit.prevent>
+
+                        <select v-model=category>
+                            <option :name="category.name" v-for="category in categories" :value="category.name">{{category.name}}</option>
                         </select>
-                        
+
                         <select v-model=time>
                             <option :name="time.when" :value="time.when" v-for="time in times">{{time.when}}</option>
                         </select>
-                        
-                        <input placeholder="Unit Price" class="price p-2" type="number" name="description" />
+
+                        <input v-model.number=price placeholder="Unit Price" class="price p-2" type="text" name="price" />
+
+                        <input v-model=expense placeholder="Expense Description" class="p-2 mt-2" type="text" name="description" />
+
+                        <button @click="addExpense" class="mt-2 mb-2 rounded-0 btn btn-large btn-success">SUBMIT</button>
                     </form>
 
                     <ul>
                         <li v-for="expense in expenses">{{expense.key}}</li>
-                        <li>{{name}} {{cat_capture}} {{time}}</li>
                     </ul>
                     <p>Kindly input the expenses for the week</p>
                 </div>
@@ -38,6 +42,8 @@
         </div>
     </div>
 </body>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/main.js"></script>
 
